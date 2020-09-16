@@ -4,6 +4,7 @@
 
 ![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_164237.jpg)
 ![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_165257.jpg)
+![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_170706.jpg)
 
 ### Also install sudo for termux
 
