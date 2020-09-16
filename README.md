@@ -31,7 +31,7 @@ Facebook  : https://m.facebook.com/shubham.gosain.980
 
  pkg install curl proot tar -y
 
- curl https://GitHub.com/shubhamggosai/rootkalilinux-termux.git
+ git clone https://GitHub.com/shubhamggosai/rootkalilinux-termux.git
  
  cd rootkalilinux-termux
  
