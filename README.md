@@ -37,7 +37,7 @@ Facebook  : https://m.facebook.com/shubham.gosain.980
  
  ls
 
- bash kali.sh
+ bash Kali.sh
  
 ### use single command
 
