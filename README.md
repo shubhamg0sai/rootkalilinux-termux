@@ -2,8 +2,8 @@
 
 ### screenshot
 
-![ ](  )
-
+![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_164237.jpg)
+![ ](
 
 ### FIND...ME.
 
