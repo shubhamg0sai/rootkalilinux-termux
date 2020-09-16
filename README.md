@@ -26,11 +26,17 @@ Facebook  : https://m.facebook.com/shubham.gosain.980
 
 ### installation
  pkg update
+
  pkg upgrade
+
  pkg install curl proot tar -y
+
  curl https://GitHub.com/shubhamggosai/rootkalilinux-termux.git
+ 
  cd rootkalilinux-termux
+ 
  ls
+
  bash kali.sh
  
 ### use single command
