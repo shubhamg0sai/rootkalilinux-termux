@@ -5,6 +5,10 @@
 ![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_164237.jpg)
 ![ ](
 
+### Also install sudo for termux
+
+### https://github.com/shubhamggosai/sudo_for_termux
+
 ### FIND...ME.
 
 
