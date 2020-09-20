@@ -1,15 +1,5 @@
 ### rootkalilinux-termux
 
-### screenshot
-
-![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_164237.jpg)
-![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_165257.jpg)
-![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_170706.jpg)
-
-### Also install sudo for termux
-
-### https://github.com/shubhamggosai/sudo_for_termux
-
 ### FIND...ME.
 
 
@@ -31,6 +21,18 @@ Github.   : https://github.com/shubhamggosai
 
 Facebook  : https://m.facebook.com/shubham.gosain.980
 
+Telegram :
+https://t.me/ShuBham_g0sain
+
+### screenshot
+
+![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_164237.jpg)
+![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_165257.jpg)
+![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_170706.jpg)
+
+### Also install sudo for termux
+
+### https://github.com/shubhamggosai/sudo_for_termux
 
 
 ### installation
