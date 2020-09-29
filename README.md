@@ -41,7 +41,7 @@ Telegram : https://t.me/ShuBham_g0sain
 
  pkg install curl proot tar -y
 
- git clone https://GitHub.com/shubhamggosai/rootkalilinux-termux.git
+ git clone https://GitHub.com/ShuBhamg0sain/rootkalilinux-termux.git
  
  cd rootkalilinux-termux
  
