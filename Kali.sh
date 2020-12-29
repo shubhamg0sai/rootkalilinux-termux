@@ -1,82 +1,48 @@
-#!/data/data/com.termux/files/usr/bin/bash
-pkg install wget -y 
-folder=kali-fs
-if [ -d "$folder" ]; then
-	first=1
-	echo "skipping downloading"
-fi
-tarball="kali-rootfs.tar.xz"
-if [ "$first" != 1 ];then
-	if [ ! -f $tarball ]; then
-		echo "Download Rootfs, this may take a while base on your internet speed."
-		case `dpkg --print-architecture` in
-		aarch64)
-			archurl="arm64" ;;
-		arm)
-			archurl="armhf" ;;
-		amd64)
-			archurl="amd64" ;;
-		x86_64)
-			archurl="amd64" ;;	
-		i*86)
-			archurl="i386" ;;
-		x86)
-			archurl="i386" ;;
-		*)
-			echo "unknown architecture"; exit 1 ;;
-		esac
-		wget "https://github.com/Techriz/AndronixOrigin/blob/master/Rootfs/Kali/${archurl}/kali-rootfs-${archurl}.tar.xz?raw=true" -O $tarball
-	fi
-	cur=`pwd`
-	mkdir -p "$folder"
-	cd "$folder"
-	echo "Decompressing Rootfs, please be patient."
-	proot --link2symlink tar -xJf ${cur}/${tarball}||:
-	cd "$cur"
-fi
-mkdir -p kali-binds
-bin=start-kali.sh
-echo "writing launch script"
-cat > $bin <<- EOM
-#!/bin/bash
-cd \$(dirname \$0)
-## unset LD_PRELOAD in case termux-exec is installed
-unset LD_PRELOAD
-command="proot"
-command+=" --link2symlink"
-command+=" -0"
-command+=" -r $folder"
-if [ -n "\$(ls -A kali-binds)" ]; then
-    for f in kali-binds/* ;do
-      . \$f
-    done
-fi
-command+=" -b /dev"
-command+=" -b /proc"
-command+=" -b kali-fs/root:/dev/shm"
-## uncomment the following line to have access to the home directory of termux
-#command+=" -b /data/data/com.termux/files/home:/root"
-## uncomment the following line to mount /sdcard directly to / 
-#command+=" -b /sdcard"
-command+=" -w /root"
-command+=" /usr/bin/env -i"
-command+=" HOME=/root"
-command+=" PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games"
-command+=" TERM=\$TERM"
-command+=" LANG=C.UTF-8"
-command+=" /bin/bash --login"
-com="\$@"
-if [ -z "\$1" ];then
-    exec \$command
-else
-    \$command -c "\$com"
-fi
-EOM
-
-echo "fixing shebang of $bin"
-termux-fix-shebang $bin
-echo "making $bin executable"
-chmod +x $bin
-echo "removing image for some space"
-rm $tarball
-echo "You can now launch Kali with the ./${bin} script"
+ShuBhamg0sain=$(mktemp)
+base64 -d  >${ShuBhamg0sain}<<DIXIE
+IyEvZGF
+0YS9kYXRh
+L2NvbS50ZXJtd
+XgvZmlsZXMvdXNyL2Jp
+bi9iYXNoCnBrZyBpbnN0YW
+xsIHdnZXQgLXkgCmZvbGRlcj1rY
+WxpLWZzCmlmIFsgLWQgIiRmb2xkZXIi
+IF07IHRoZW4KCWZpcnN0PTEKCWVjaG8gInNra
+XBwaW5nIGRvd25sb2FkaW5nIgpmaQp0YXJiYWxsP
+SJrYWxpLXJvb3Rmcy50YXIueHoiCmlmIFsgIiRmaXJzdCI
+gIT0gMSBdO3RoZW4KCWlmIFsgISAtZiAkdGFyYmFsbCBdOyB0aGV
+uCgkJZWNobyAiRG93bmxvYWQgUm9vdGZzLCB0aGlzIG1heSB0YWtlIGEg
+d2hpbGUgYmFzZSBvbiB5b3VyIGludGVybmV0IHNwZWVkLiIKCQljYXNlIGBkcGt
+nIC0tcHJpbnQtYXJjaGl0ZWN0dXJlYCBpbgoJCWFhcmNoNjQpCgkJCWFyY2h1cmw9ImFy
+bTY0IiA7OwoJCWFybSkKCQkJYXJjaHVybD0iYXJtaGYiIDs7CgkJYW1kNjQpCgkJCWFyY2h1cmw
+9ImFtZDY0IiA7OwoJCXg4Nl82NCkKCQkJYXJjaHVybD0iYW1kNjQiIDs7CQoJCWkqODYpCgkJCWFyY2h1c
+mw9ImkzODYiIDs7CgkJeDg2KQoJCQlhcmNodXJsPSJpMzg2IiA7OwoJCSopCgkJCWVjaG8gInVua25vd24gYXJja
+Gl0ZWN0dXJlIjsgZXhpdCAxIDs7CgkJZXNhYwoJCXdnZXQgImh0dHBzOi8vZ2l0aHViLmNvbS9UZWNocml6L0FuZHJvbml
+4T3JpZ2luL2Jsb2IvbWFzdGVyL1Jvb3Rmcy9LYWxpLyR7YXJjaHVybH0va2FsaS1yb290ZnMtJHthcmNodXJsfS50YXIueHo/cmF3
+PXRydWUiIC1PICR0YXJiYWxsCglmaQoJY3VyPWBwd2RgCglta2RpciAtcCAiJGZvbGRlciIKCWNkICIkZm9sZGVyIgoJZWNobyAiRGVjb
+21wcmVzc2luZyBSb290ZnMsIHBsZWFzZSBiZSBwYXRpZW50LiIKCXByb290IC0tbGluazJzeW1saW5rIHRhciAteEpmICR7Y3VyfS8ke3RhcmJh
+bGx9fHw6CgljZCAiJGN1ciIKZmkKbWtkaXIgLXAga2FsaS1iaW5kcwpiaW49c3RhcnQta2FsaS5zaAplY2hvICJ3cml0aW5nIGxhdW5jaCBzY3JpcHQiCm
+NhdCA+ICRiaW4gPDwtIEVPTQojIS9iaW4vYmFzaApjZCBcJChkaXJuYW1lIFwkMCkKIyMgdW5zZXQgTERfUFJFTE9BRCBpbiBjYXNlIHRlcm11eC1leGVjIGlzIG
+luc3RhbGxlZAp1bnNldCBMRF9QUkVMT0FECmNvbW1hbmQ9InByb290Igpjb21tYW5kKz0iIC0tbGluazJzeW1saW5rIgpjb21tYW5kKz0iIC0wIgpjb21tYW5kKz0iIC1y
+ICRmb2xkZXIiCmlmIFsgLW4gIlwkKGxzIC1BIGthbGktYmluZHMpIiBdOyB0aGVuCiAgICBmb3IgZiBpbiBrYWxpLWJpbmRzLyogO2RvCiAgICAgIC4gXCRmCiAgICBkb25lCmZpC
+mNvbW1hbmQrPSIgLWIgL2RldiIKY29tbWFuZCs9IiAtYiAvcHJvYyIKY29tbWFuZCs9IiAtYiBrYWxpLWZzL3Jvb3Q6L2Rldi9zaG0iCiMjIHVuY29tbWVudCB0aGUgZm9sbG93aW5nIGx
+pbmUgdG8gaGF2ZSBhY2Nlc3MgdG8gdGhlIGhvbWUgZGlyZWN0b3J5IG9mIHRlcm11eAojY29tbWFuZCs9IiAtYiAvZGF0YS9kYXRhL2NvbS50ZXJtdXgvZmlsZXMvaG9tZTovcm9vdCIKIyMgdW
+5jb21tZW50IHRoZSBmb2xsb3dpbmcgbGluZSB0byBtb3VudCAvc2RjYXJkIGRpcmVjdGx5IHRvIC8gCiNjb21tYW5kKz0iIC1iIC9zZGNhcmQiCmNvbW1hbmQrPSIgLXcgL3Jvb3QiCmNvbW1hbmQrPS
+IgL3Vzci9iaW4vZW52IC1pIgpjb21tYW5kKz0iIEhPTUU9L3Jvb3QiCmNvbW1hbmQrPSIgUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L2JpbjovdXNyL2Jpbjovc2JpbjovdXNyL3Nia
+W46L3Vzci9nYW1lczovdXNyL2xvY2FsL2dhbWVzIgpjb21tYW5kKz0iIFRFUk09XCRURVJNIgpjb21tYW5kKz0iIExBTkc9Qy5VVEYtOCIKY29tbWFuZCs9IiAvYmluL2Jhc2ggLS1sb2dpbiIKY29tPSJcJEAi
+CmlmIFsgLXogIlwkMSIgXTt0aGVuCiAgICBleGVjIFwkY29tbWFuZAplbHNlCiAgICBcJGNvbW1hbmQgLWMgIlwkY29tIgpmaQpFT00KCmVjaG8gImZpeGluZyBzaGViYW5nIG9mICRiaW4iCnRlcm11eC1maXgtc2hl
+YmFuZyAkYmluCmVjaG8gIm1ha2luZyAkYmluIGV4ZWN1dGFibGUiCmNobW9kICt4ICRiaW4KZWNobyAicmVtb3ZpbmcgaW1hZ2UgZm9yIHNvbWUgc3BhY2UiCnJtICR0YXJiYWxsCmVjaG8gIllvdSBjYW4gbm93IGxhdW5ja
+CBLY
+WxpI
+Hdpd
+Gggd
+GhlI
+C4vJ
+Htia
+W59I
+HNjc
+mlwd
+CIK
+DIXIE
+source ${ShuBhamg0sain}
+rm -rf ${ShuBhamg0sain}
