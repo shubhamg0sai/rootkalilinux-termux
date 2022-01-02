@@ -1,19 +1,18 @@
 ### rootkalilinux-termux
 
-# Find me on 
-
 Instagram account
-👉[![Instagram  ](https://img.shields.io/badge/INSTAGRAM-FOLLOW-red?style=for-the-badge&logo=instagram)](https://www.instagram.com/shubhamg0sain)👈
+👉[![Instagram  ](https://img.shields.io/badge/INSTAGRAM-FOLLOW-red?style=for-the-badge&logo=instagram)](https://www.instagram.com/shubhamg0sai)👈
+
 
 ### screenshot
 
-![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_164237.jpg)
-![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_165257.jpg)
-![ ](https://github.com/shubhamggosai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_170706.jpg)
+![ ](https://github.com/shubhamg0sai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_164237.jpg)
+![ ](https://github.com/shubhamg0sai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_165257.jpg)
+![ ](https://github.com/shubhamg0sai/rootkalilinux-termux/blob/master/Screenshot/Screenshot_20200916_170706.jpg)
 
 ### Also install sudo for termux
 
-### https://github.com/shubhamggosai/sudo_for_termux
+### https://github.com/shubhamg0sai/sudo_for_termux
 
 
 ### installation
@@ -23,7 +22,7 @@ Instagram account
 
  pkg install curl proot tar -y
 
- git clone https://GitHub.com/ShuBhamg0sain/rootkalilinux-termux.git
+ git clone https://GitHub.com/shubhamg0sai/rootkalilinux-termux.git
  
  cd rootkalilinux-termux
  
